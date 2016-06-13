@@ -14,6 +14,8 @@ my @recs = ();
 while(my $line = $fh->getline) {
 
   my $vals = App::YG::Apache::Combined::parse($line);
+  
+  my $keys = [qw/Host Ident Authuser Date Request Status Bytes Referer UserAgent/];
 
 
 

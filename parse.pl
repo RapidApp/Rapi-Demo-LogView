@@ -37,4 +37,5 @@ use Rapi::Demo::LogView;
 
 my $Rs = Rapi::Demo::LogView->model('DB::RequestLog');
 
+$Rs->populate(\@recs);
 

@@ -30,10 +30,10 @@ while(my $line = $fh->getline) {
 }
 
 
-use Data::Printer;
-p @recs;
+use FindBin;
+use lib "$FindBin::Bin/lib";
 
-
+use Rapi::Demo::LogView;
 
 
 

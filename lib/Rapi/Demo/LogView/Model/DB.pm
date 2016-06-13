@@ -52,7 +52,78 @@ __PACKAGE__->config(
 
     # TableSpecs define extra RapidApp-specific metadata for each source
     # and is used/available to all modules which interact with them
-    TableSpecs => {},
+    TableSpecs => {
+      RequestLog => {
+        display_column => 'id',
+        title          => 'RequestLog',
+        title_multi    => 'RequestLog Rows',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+          id => {
+            allow_add => 0,
+            header    => 'id',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          host => {
+            header => 'host',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          ident => {
+            header => 'ident',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          authuser => {
+            header => 'authuser',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          date => {
+            header => 'date',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          request => {
+            header => 'request',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          status => {
+            header => 'status',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          bytes => {
+            header => 'bytes',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          referer => {
+            header => 'referer',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          useragent => {
+            header => 'useragent',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+        },
+      },
+    },
   },
 
 );

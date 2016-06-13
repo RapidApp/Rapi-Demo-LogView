@@ -11,10 +11,10 @@
 -- 
 --------------------------------------------------------------------------------
 
+CREATE TABLE [request_log] (
+  [id]         INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 
-
-
-
+);
 
 
 

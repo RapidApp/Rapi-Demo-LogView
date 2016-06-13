@@ -18,6 +18,9 @@ while(my $line = $fh->getline) {
   #my $keys = [qw/Host Ident Authuser Date Request Status Bytes Referer UserAgent/];
   my $keys = App::YG::Apache::Combined::labels();
   
+  #lower-case key names to match column names:
+  @$keys = map { lc($_) } @$keys;
+  
   scalar(@$keys) == scalar(@$vals) or die "key/val count mismatch";
   my $i = 0;
   my $rec = { map { $_ => $vals->[$i++] } @$keys };
@@ -29,8 +32,6 @@ while(my $line = $fh->getline) {
 
 use Data::Printer;
 p @recs;
-
-
 
 
 

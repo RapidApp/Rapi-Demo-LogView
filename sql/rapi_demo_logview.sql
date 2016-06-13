@@ -13,16 +13,16 @@
 
 CREATE TABLE [request_log] (
   [id]         INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-
+  [host]       varchar,
+  [ident]      varchar,
+  [authuser]   varchar,
+  [date]       varchar,
+  [request]    varchar,
+  [status]     varchar,
+  [bytes]      varchar,
+  [referer]    varchar,
+  [useragent]  varchar
 );
-
-
-
-
-
-
-
-
 
 
 

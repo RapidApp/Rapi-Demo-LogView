@@ -17,16 +17,14 @@ while(my $line = $fh->getline) {
   
   #my $keys = [qw/Host Ident Authuser Date Request Status Bytes Referer UserAgent/];
   my $keys = App::YG::Apache::Combined::labels();
-
+  
+  scalar(@$keys) == scalar(@$vals) or die "key/val count mismatch";
+  my $i = 0;
+  my $rec = { map { $_ => $vals->[$i++] } @$keys };
+  
+  push @recs, $rec; 
 
 }
-
-
-
-
-
-
-
 
 
 

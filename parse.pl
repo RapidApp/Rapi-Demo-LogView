@@ -35,5 +35,6 @@ use lib "$FindBin::Bin/lib";
 
 use Rapi::Demo::LogView;
 
+my $Rs = Rapi::Demo::LogView->model('DB::RequestLog');
 
 

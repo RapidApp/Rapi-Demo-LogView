@@ -27,8 +27,8 @@ while(my $line = $fh->getline) {
 }
 
 
-
-
+use Data::Printer;
+p @recs;
 
 
 

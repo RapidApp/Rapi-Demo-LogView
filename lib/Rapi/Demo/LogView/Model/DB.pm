@@ -104,10 +104,10 @@ __PACKAGE__->config(
             #profiles => [],
           },
           bytes => {
-            header => 'bytes',
+            header => 'Size',
             #width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
+            profiles => ['filesize'],
           },
           referer => {
             header => 'referer',

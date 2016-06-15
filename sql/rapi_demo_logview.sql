@@ -11,6 +11,11 @@
 -- 
 --------------------------------------------------------------------------------
 
+CREATE TABLE [http_status] (
+  [code] integer PRIMARY KEY NOT NULL,
+  [description] varchar(255) NOT NULL
+);
+
 CREATE TABLE [request_log] (
   [id]         INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
   [host]       varchar(15)   NOT NULL, -- IP Addresses

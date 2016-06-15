@@ -13,13 +13,13 @@
 
 CREATE TABLE [request_log] (
   [id]         INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-  [host]       varchar,
+  [host]       varchar(15)   NOT NULL, -- IP Addresses
   [ident]      varchar,
   [authuser]   varchar,
-  [date]       varchar,
-  [request]    varchar,
-  [status]     varchar,
-  [bytes]      varchar,
+  [date]       datetime      NOT NULL,
+  [request]    varchar       NOT NULL,
+  [status]     integer       NOT NULL, 
+  [bytes]      integer,
   [referer]    varchar,
   [useragent]  varchar
 );

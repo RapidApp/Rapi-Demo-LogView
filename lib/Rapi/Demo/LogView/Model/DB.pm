@@ -123,6 +123,35 @@ __PACKAGE__->config(
           },
         },
       },
+      HttpStatus => {
+        display_column => 'code',
+        title          => 'HttpStatus',
+        title_multi    => 'HttpStatus Rows',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+          code => {
+            allow_add => 0,
+            header    => 'code',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          description => {
+            header => 'description',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          request_logs => {
+            header => 'request_logs',
+            #width => 100,
+            #sortable => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+        },
+      },
     },
   },
 

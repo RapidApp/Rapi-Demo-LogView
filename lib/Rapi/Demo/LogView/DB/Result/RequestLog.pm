@@ -27,7 +27,7 @@ __PACKAGE__->add_columns(
   "request",
   { data_type => "varchar", is_nullable => 0 },
   "status",
-  { data_type => "integer", is_nullable => 0 },
+  { data_type => "integer", is_foreign_key => 1, is_nullable => 0 },
   "bytes",
   { data_type => "integer", is_nullable => 1 },
   "referer",
@@ -36,10 +36,16 @@ __PACKAGE__->add_columns(
   { data_type => "varchar", is_nullable => 1 },
 );
 __PACKAGE__->set_primary_key("id");
+__PACKAGE__->belongs_to(
+  "status",
+  "Rapi::Demo::LogView::DB::Result::HttpStatus",
+  { code => "status" },
+  { is_deferrable => 0, on_delete => "RESTRICT", on_update => "RESTRICT" },
+);
 
 
-# Created by DBIx::Class::Schema::Loader v0.07043 @ 2016-06-14 20:20:09
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:b0yVt9VX2VpH2ukX+aQjDQ
+# Created by DBIx::Class::Schema::Loader v0.07043 @ 2016-06-14 20:34:46
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:9x0DpPTqfUbSIr9r2lG89w
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

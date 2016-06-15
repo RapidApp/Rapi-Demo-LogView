@@ -134,6 +134,7 @@ __PACKAGE__->config(
         title_multi    => 'HttpStatus Rows',
         iconCls        => 'ra-icon-pg',
         multiIconCls   => 'ra-icon-pg-multi',
+        auto_editor_type => 'combo',
         columns        => {
           code => {
             allow_add => 0,

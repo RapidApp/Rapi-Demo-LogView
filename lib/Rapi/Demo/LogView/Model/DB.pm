@@ -154,6 +154,34 @@ __PACKAGE__->config(
           },
         },
       },
+      Host => {
+        display_column => 'address',
+        title          => 'Host',
+        title_multi    => 'Host Rows',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+          address => {
+            header => 'address',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          hostname => {
+            header => 'hostname',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          request_logs => {
+            header => 'request_logs',
+            #width => 100,
+            #sortable => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+        },
+      },
     },
   },
 

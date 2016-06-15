@@ -7,6 +7,9 @@ use RapidApp 1.2000;
 use Catalyst qw/
     -Debug
     RapidApp::RapidDbic
+    RapidApp::AuthCore
+    RapidApp::NavCore
+    RapidApp::CoreSchemaAdmin
 /;
 
 extends 'Catalyst';

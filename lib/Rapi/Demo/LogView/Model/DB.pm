@@ -75,12 +75,14 @@ __PACKAGE__->config(
           },
           ident => {
             header => 'ident',
+            hidden => 1,
             #width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           authuser => {
             header => 'authuser',
+            hidden => 1,
             #width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],

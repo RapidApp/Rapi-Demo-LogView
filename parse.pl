@@ -33,6 +33,9 @@ while(my $line = $fh->getline) {
     $rec->{date} = join(' ',$dt->ymd('-'),$dt->hms(':'));
   }
 
+  # Consider '-' as unset/null
+  $rec->{$_} eq '-' and delete $rec->{$_} for (keys %$rec);
+
   push @recs, $rec; 
 
 }

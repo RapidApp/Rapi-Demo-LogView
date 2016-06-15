@@ -48,7 +48,10 @@ CREATE TABLE [request_log] (
   [status]     integer       NOT NULL, 
   [bytes]      integer,
   [referer]    varchar,
-  [useragent]  varchar
+  [useragent]  varchar,
+
+  FOREIGN KEY ([status]) REFERENCES [http_status] ([code]) 
+   ON DELETE RESTRICT ON UPDATE RESTRICT
 );
 
 

@@ -129,7 +129,7 @@ __PACKAGE__->config(
         },
       },
       HttpStatus => {
-        display_column => 'code',
+        display_column => 'code_desc',
         title          => 'HttpStatus',
         title_multi    => 'HttpStatus Rows',
         iconCls        => 'ra-icon-pg',

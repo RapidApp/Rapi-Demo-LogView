@@ -5,6 +5,8 @@ use warnings;
 
 use Path::Class qw/file dir/;
 use App::YG::Apache::Combined;
+use DateTime;
+use Date::Parse;
 
 # Read log file supplied on command line:
 my $path = $ARGV[0] or die "missing arguments";
@@ -25,6 +27,12 @@ while(my $line = $fh->getline) {
   my $i = 0;
   my $rec = { map { $_ => $vals->[$i++] } @$keys };
   
+  # Parse and convert date to SQLite 'datetime' format
+  if(my $epoch = Date::Parse::str2time( $rec->{date} )) {
+    my $dt = DateTime->from_epoch( epoch => $epoch, time_zone => 'local' );
+    $rec->{date} = join(' ',$dt->ymd('-'),$dt->hms(':'));
+  }
+
   push @recs, $rec; 
 
 }

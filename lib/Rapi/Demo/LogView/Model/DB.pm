@@ -47,6 +47,9 @@ __PACKAGE__->config(
             undo => { showtext => 1 }
           }
         }
+      },
+      RequestLog => {
+        include_colspec => ['*','status.description'],
       }
     },
 

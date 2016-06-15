@@ -36,12 +36,11 @@ __PACKAGE__->config(
     grid_params => {
       # The special '*defaults' key applies to all sources at once
       '*defaults' => {
-        include_colspec => ['*'],    #<-- default already ['*']
-        # uncomment these lines to turn on editing in all grids
+        include_colspec     => ['*'],
         updatable_colspec   => ['*'],
         creatable_colspec   => ['*'],
         destroyable_relspec => ['*'],
-        extra_extconfig => {
+        extra_extconfig     => {
           store_button_cnf => {
             save => { showtext => 1 },
             undo => { showtext => 1 }
@@ -49,7 +48,7 @@ __PACKAGE__->config(
         }
       },
       RequestLog => {
-        include_colspec => ['*','status.description'],
+        include_colspec => [ '*', 'status.description' ],
       }
     },
 
@@ -129,13 +128,13 @@ __PACKAGE__->config(
         },
       },
       HttpStatus => {
-        display_column => 'code_desc',
-        title          => 'HttpStatus',
-        title_multi    => 'HttpStatus Rows',
-        iconCls        => 'ra-icon-pg',
-        multiIconCls   => 'ra-icon-pg-multi',
+        display_column   => 'code_desc',
+        title            => 'HttpStatus',
+        title_multi      => 'HttpStatus Rows',
+        iconCls          => 'ra-icon-pg',
+        multiIconCls     => 'ra-icon-pg-multi',
         auto_editor_type => 'combo',
-        columns        => {
+        columns          => {
           code => {
             allow_add => 0,
             header    => 'code',
@@ -151,6 +150,13 @@ __PACKAGE__->config(
           },
           request_logs => {
             header => 'request_logs',
+            #width => 100,
+            #sortable => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          code_desc => {
+            header => 'code_desc',
             #width => 100,
             #sortable => 1,
             #renderer => 'RA.ux.App.someJsFunc',
@@ -191,7 +197,7 @@ __PACKAGE__->config(
       HttpStatus => {
         code_desc => {
           data_type => "varchar",
-          sql => 'SELECT self.code || " - " || self.description'
+          sql       => 'SELECT self.code || " - " || self.description'
         }
       }
     }

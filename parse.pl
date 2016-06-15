@@ -46,6 +46,10 @@ use lib "$FindBin::Bin/lib";
 
 use Rapi::Demo::LogView;
 
+my $hostRs = Rapi::Demo::LogView->model('DB::Host');
+my %hosts = ();
+$hosts{$_->{host}} ||= $hostRs->find_or_create({ address => $_->{host} }) for (@recs);
+
 my $Rs = Rapi::Demo::LogView->model('DB::RequestLog');
 
 $Rs->populate(\@recs);

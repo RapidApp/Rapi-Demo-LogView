@@ -38,6 +38,11 @@ INSERT INTO [http_status] VALUES (403,'Forbidden');
 INSERT INTO [http_status] VALUES (404,'Not Found');
 INSERT INTO [http_status] VALUES (500,'Internal Server Error');
 
+CREATE TABLE [host] (
+  [address] varchar(15) PRIMARY KEY NOT NULL,
+  [hostname] varchar
+);
+
 CREATE TABLE [request_log] (
   [id]         INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
   [host]       varchar(15)   NOT NULL, -- IP Addresses
@@ -51,7 +56,10 @@ CREATE TABLE [request_log] (
   [useragent]  varchar,
 
   FOREIGN KEY ([status]) REFERENCES [http_status] ([code]) 
-   ON DELETE RESTRICT ON UPDATE RESTRICT
+   ON DELETE RESTRICT ON UPDATE RESTRICT,
+
+  FOREIGN KEY ([host]) REFERENCES [host] ([address])
+   ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 
 

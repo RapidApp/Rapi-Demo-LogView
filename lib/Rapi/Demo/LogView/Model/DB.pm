@@ -187,8 +187,15 @@ __PACKAGE__->config(
         },
       },
     },
+    virtual_columns => {
+      HttpStatus => {
+        code_desc => {
+          data_type => "varchar",
+          sql => 'SELECT self.code || " - " || self.description'
+        }
+      }
+    }
   },
-
 );
 
 ## ------
